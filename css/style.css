@@ -53,7 +53,7 @@ body {
 }
 
 .header {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(245, 245, 245, 0.6);
 }
 
 
@@ -135,6 +135,11 @@ body {
 
 }
 
+.section-name {
+    margin-bottom: 2rem;
+    text-align: center
+}
+
 #about {
     padding: 72px;
 }
@@ -159,14 +164,18 @@ body {
     .about-bg {
         background: url("../img/about-bg.jpg");
         transform: scale(0.8, 0.8);
-        margin-left: 4rem;
+        margin-left: 3rem;
         max-width: 100%;
         height: auto;
         background-size: cover;
     }
 
     #about .content {
-        padding: 1rem;
+        padding: 1.5rem;
+    }
+
+    .col .content .right {
+        padding: 0
     }
 }
 
@@ -180,8 +189,31 @@ body {
     border-radius: 15px;
 }
 
+@keyframes to-down-btn {
+    0% {
+        opacity: 100%;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 10%;
+        transform: translateY(-16px);
 
+    }
+}
 
+.btn-dot:hover {
+    animation: to-down-btn 2s cubic-bezier(1, 0.69, 1, 1) 0s infinite;
+}
 
-
-
+.btn-dot:hover:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}

@@ -1,0 +1,197 @@
+/*!
+   Mocassin CSS v1.3.0 |  https://wideckop.github.io/mocassin.css/
+   Licensed under the MIT license
+
+   Copyright (c) 2016 Eliezer Pujols (Wideckop)
+*/
+.mc-item,
+.mc-item > * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mc-item {
+    position: relative;
+}
+
+.mc-item > .mc-item__image,
+.mc-item > .mc-item__caption {
+    display: block;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.mc-item > .mc-item__image {
+    max-height: 300px;
+    margin: 10px;
+}
+
+.mc-item .mc-item__caption {
+    background-color: #F8F8FF;
+    border-radius: 1px;
+}
+
+
+.mc-item.mc-item--slideInUpBig-zoomOut, .mc-item.mc-item--slideInDownBig-zoomOut, .mc-item.mc-item--slideInLeftBig-zoomOut, .mc-item.mc-item--slideInRightBig-zoomOut {
+    overflow: hidden;
+}
+
+.mc-item.mc-item--slideInUpBig-zoomOut > .mc-item__image, .mc-item.mc-item--slideInDownBig-zoomOut > .mc-item__image, .mc-item.mc-item--slideInLeftBig-zoomOut > .mc-item__image, .mc-item.mc-item--slideInRightBig-zoomOut > .mc-item__image {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.mc-item.mc-item--slideInUpBig-zoomOut > .mc-item__caption, .mc-item.mc-item--slideInDownBig-zoomOut > .mc-item__caption, .mc-item.mc-item--slideInLeftBig-zoomOut > .mc-item__caption, .mc-item.mc-item--slideInRightBig-zoomOut > .mc-item__caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mc-item.mc-item--slideInUpBig-zoomOut:hover > .mc-item__image, .mc-item.mc-item--slideInUpBig-zoomOut.touch > .mc-item__image, .mc-item.mc-item--slideInDownBig-zoomOut:hover > .mc-item__image, .mc-item.mc-item--slideInDownBig-zoomOut.touch > .mc-item__image, .mc-item.mc-item--slideInLeftBig-zoomOut:hover > .mc-item__image, .mc-item.mc-item--slideInLeftBig-zoomOut.touch > .mc-item__image, .mc-item.mc-item--slideInRightBig-zoomOut:hover > .mc-item__image, .mc-item.mc-item--slideInRightBig-zoomOut.touch > .mc-item__image {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+.mc-item.mc-item--slideInUpBig-zoomOut:hover > .mc-item__caption, .mc-item.mc-item--slideInUpBig-zoomOut.touch > .mc-item__caption, .mc-item.mc-item--slideInDownBig-zoomOut:hover > .mc-item__caption, .mc-item.mc-item--slideInDownBig-zoomOut.touch > .mc-item__caption, .mc-item.mc-item--slideInLeftBig-zoomOut:hover > .mc-item__caption, .mc-item.mc-item--slideInLeftBig-zoomOut.touch > .mc-item__caption, .mc-item.mc-item--slideInRightBig-zoomOut:hover > .mc-item__caption, .mc-item.mc-item--slideInRightBig-zoomOut.touch > .mc-item__caption {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.mc-item.mc-item--slideInUpBig-zoomOut > .mc-item__caption {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+}
+
+.mc-item.mc-item--slideInDownBig-zoomOut > .mc-item__caption {
+    -webkit-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+}
+
+.mc-item.mc-item--slideInLeftBig-zoomOut > .mc-item__caption {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+}
+
+.mc-item.mc-item--slideInRightBig-zoomOut > .mc-item__caption {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+
+.mc-item.mc-item--flipOutUp, .mc-item.mc-item--flipOutDown, .mc-item.mc-item--flipOutLeft, .mc-item.mc-item--flipOutRight {
+    -webkit-perspective: 82em;
+    perspective: 82em;
+}
+
+.mc-item.mc-item--flipOutUp .mc-item__image, .mc-item.mc-item--flipOutDown .mc-item__image, .mc-item.mc-item--flipOutLeft .mc-item__image, .mc-item.mc-item--flipOutRight .mc-item__image {
+    opacity: 1;
+}
+
+.mc-item.mc-item--flipOutUp > .mc-item__caption, .mc-item.mc-item--flipOutDown > .mc-item__caption, .mc-item.mc-item--flipOutLeft > .mc-item__caption, .mc-item.mc-item--flipOutRight > .mc-item__caption {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 85%;
+}
+
+@media screen and (max-width: 990px) {
+    .mc-item.mc-item--flipOutUp > .mc-item__caption, .mc-item.mc-item--flipOutDown > .mc-item__caption, .mc-item.mc-item--flipOutLeft > .mc-item__caption, .mc-item.mc-item--flipOutRight > .mc-item__caption {
+        height: 80%;
+    }
+
+    .mc-item.mc-item--flipOutUp > .mc-item__caption {
+        bottom: 30%;
+        -webkit-transform: rotate3d(1, 0, 0, -90deg);
+        transform: rotate3d(1, 0, 0, -90deg);
+    }
+
+}
+
+.mc-item.mc-item--flipOutUp:hover .mc-item__image, .mc-item.mc-item--flipOutUp.touch .mc-item__image, .mc-item.mc-item--flipOutDown:hover .mc-item__image, .mc-item.mc-item--flipOutDown.touch .mc-item__image, .mc-item.mc-item--flipOutLeft:hover .mc-item__image, .mc-item.mc-item--flipOutLeft.touch .mc-item__image, .mc-item.mc-item--flipOutRight:hover .mc-item__image, .mc-item.mc-item--flipOutRight.touch .mc-item__image {
+    opacity: 0;
+}
+
+.mc-item.mc-item--flipOutUp:hover > .mc-item__caption, .mc-item.mc-item--flipOutUp.touch > .mc-item__caption, .mc-item.mc-item--flipOutDown:hover > .mc-item__caption, .mc-item.mc-item--flipOutDown.touch > .mc-item__caption, .mc-item.mc-item--flipOutLeft:hover > .mc-item__caption, .mc-item.mc-item--flipOutLeft.touch > .mc-item__caption, .mc-item.mc-item--flipOutRight:hover > .mc-item__caption, .mc-item.mc-item--flipOutRight.touch > .mc-item__caption {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: rotate3d(0, 0, 0, 0);
+    transform: rotate3d(0, 0, 0, 0);
+}
+
+.mc-item.mc-item--flipOutUp > .mc-item__image,
+.mc-item.mc-item--flipOutUp > .mc-item__caption {
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+}
+
+.mc-item.mc-item--flipOutUp > .mc-item__caption {
+    left: 0;
+    bottom: 15%;
+    -webkit-transform: rotate3d(1, 0, 0, -90deg);
+    transform: rotate3d(1, 0, 0, -90deg);
+}
+
+.mc-item.mc-item--flipOutUp:hover > .mc-item__image, .mc-item.mc-item--flipOutUp.touch > .mc-item__image {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+    transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.mc-item.mc-item--flipOutDown > .mc-item__image,
+.mc-item.mc-item--flipOutDown > .mc-item__caption {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+.mc-item.mc-item--flipOutDown > .mc-item__caption {
+    top: 0;
+    left: 0;
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+    transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.mc-item.mc-item--flipOutDown:hover > .mc-item__image, .mc-item.mc-item--flipOutDown.touch > .mc-item__image {
+    -webkit-transform: rotate3d(1, 0, 0, -90deg);
+    transform: rotate3d(1, 0, 0, -90deg);
+}
+
+.mc-item.mc-item--flipOutLeft > .mc-item__image,
+.mc-item.mc-item--flipOutLeft > .mc-item__caption {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+.mc-item.mc-item--flipOutLeft > .mc-item__caption {
+    top: 0;
+    left: 0;
+    -webkit-transform: rotate3d(0, 1, 0, -90deg);
+    transform: rotate3d(0, 1, 0, -90deg);
+}
+
+.mc-item.mc-item--flipOutLeft:hover > .mc-item__image, .mc-item.mc-item--flipOutLeft.touch > .mc-item__image {
+    -webkit-transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(0, 1, 0, 90deg);
+}
+
+.mc-item.mc-item--flipOutRight > .mc-item__image,
+.mc-item.mc-item--flipOutRight > .mc-item__caption {
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+}
+
+.mc-item.mc-item--flipOutRight > .mc-item__caption {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(0, 1, 0, 90deg);
+}
+
+.mc-item.mc-item--flipOutRight:hover > .mc-item__image, .mc-item.mc-item--flipOutRight.touch > .mc-item__image {
+    -webkit-transform: rotate3d(0, 1, 0, -90deg);
+    transform: rotate3d(0, 1, 0, -90deg);
+}
